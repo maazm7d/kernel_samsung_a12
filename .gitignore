@@ -1,39 +1,6 @@
-# Ignore compiled kernel objects
+*.zip
+out/
 *.o
 *.ko
-*.mod.c
-*.cmd
-*.symtypes
-*.order
-*.elf
-*.bin
-*.gz
-*.bz2
-*.xz
-*.lz4
-*.lzma
-*.zst
-
-# Ignore kernel build output directories
-arch/*/boot
-arch/*/kernel
-arch/*/net
-arch/*/lib
-
-# Ignore intermediate files
-modules.builtin
-modules.builtin.modinfo
-modules.order
-Module.symvers
-.vscode/
-*.gcno
-*.gcda
-*.s
 *.d
-
-# Ignore ccache (if used)
-ccache/
-
-# Ignore log files
-*.log
-*.log.*
+*.cmd
