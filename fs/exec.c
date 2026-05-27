@@ -62,6 +62,7 @@
 #include <linux/oom.h>
 #include <linux/compat.h>
 #include <linux/vmalloc.h>
+#include <linux/ksm.h>
 #include <linux/task_integrity.h>
 
 #include <linux/uaccess.h>
