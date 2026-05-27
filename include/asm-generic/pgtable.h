@@ -822,7 +822,8 @@ static inline int is_zero_pfn(unsigned long pfn)
 {
 	extern unsigned long zero_pfn;
 	unsigned long offset_from_zero_pfn = pfn - zero_pfn;
-	return offset_from_zero_pfn <= (zero_page_mask >> PAGE_SHIFT);
+	return offset_from_zero_pfn <= (zero_page_mask >> PAGE_SHIFT) || is_uksm_zero_pfn(pfn);
+}
 }
 
 #define my_zero_pfn(addr)	page_to_pfn(ZERO_PAGE(addr))
@@ -831,13 +832,15 @@ static inline int is_zero_pfn(unsigned long pfn)
 static inline int is_zero_pfn(unsigned long pfn)
 {
 	extern unsigned long zero_pfn;
-	return pfn == zero_pfn;
+	return (pfn == zero_pfn) || (is_uksm_zero_pfn(pfn));
+}
 }
 
 static inline unsigned long my_zero_pfn(unsigned long addr)
 {
 	extern unsigned long zero_pfn;
-	return zero_pfn;
+	return offset_from_zero_pfn <= (zero_page_mask >> PAGE_SHIFT) || is_uksm_zero_pfn(pfn);
+}
 }
 #endif
 
