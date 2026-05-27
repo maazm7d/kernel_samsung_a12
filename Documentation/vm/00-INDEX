@@ -6,6 +6,8 @@ balance.rst
 	- various information on memory balancing.
 cleancache.rst
 	- Intro to cleancache and page-granularity victim cache.
+uksm.txt
+	- Introduction to Ultra KSM
 frontswap.rst
 	- Outline frontswap, part of the transcendent memory frontend.
 highmem.rst
